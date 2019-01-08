@@ -1,5 +1,7 @@
 package com.onlinestore.customerservice.services;
 
-public interface CustomerService {
+import com.onlinestore.customerservice.model.Customer;
 
+public interface CustomerService {
+	Customer getCustomerById(String customerId);
 }
