@@ -25,6 +25,7 @@ public class CustomerControllerTest {
 	@MockBean
 	private CustomerService customerService;
 
+
 	@Test
 	public void shouldGetCustomerById () throws Exception{
 		mockMvc.perform(get("/v1/customers/CUSTOMER_ID")).andExpect(status().isOk());
