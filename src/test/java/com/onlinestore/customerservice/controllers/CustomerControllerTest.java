@@ -14,21 +14,19 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@WebMvcTest(CustomerController.class)
 public class CustomerControllerTest {
-
-	private String CUSTOMER_ID;
-
-	@Autowired
-	private MockMvc mockMvc;
+	private final String CUSTOMER_ID = "25";
 
 	@MockBean
 	private CustomerService customerService;
 
+	@Autowired
+	private MockMvc mockMvc;
 
 	@Test
-	public void shouldGetCustomerById () throws Exception{
-		mockMvc.perform(get("/v1/customers/CUSTOMER_ID")).andExpect(status().isOk());
+	public void shouldGetCustomerById() throws Exception {
+		mockMvc.perform(get("/v1/customers/"+CUSTOMER_ID)).andExpect(status().isOk());
 		verify(customerService).getCustomerById(CUSTOMER_ID);
 	}
 }
