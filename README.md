@@ -11,14 +11,14 @@ mvn clean package docker:build
 
 ## **Running**
 
-1. To start all service in Docker container:
+1. To start service in Docker container:
 ```
 docker run marinasavchenko/onlinestore-customersrv:v1
 ```
 
 ## **Running the tests**
 
-1.To run tests for all services via Maven:
+1.To run tests via Maven:
 ```
 mvn clean test
 ```
