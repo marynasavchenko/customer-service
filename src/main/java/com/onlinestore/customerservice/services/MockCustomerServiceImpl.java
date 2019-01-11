@@ -8,4 +8,9 @@ public class MockCustomerServiceImpl implements CustomerService {
 	public Customer getCustomerById(String customerId) {
 		return new Customer();
 	}
+
+	@Override
+	public void saveCustomer(Customer customer) {
+
+	}
 }
