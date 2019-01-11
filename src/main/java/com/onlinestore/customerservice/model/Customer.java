@@ -1,12 +1,22 @@
 package com.onlinestore.customerservice.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 
+@Entity
+@Table(name = "customers")
 public class Customer {
+	@Id
+	@Column(name ="customer_id", nullable = false)
 	private int customerId;
 
+	@Column(name ="customer_name", nullable = false)
 	private String customerName;
 
+	@Column(name ="customer_address", nullable = false)
 	private String customerAddress;
 
 	public Customer() {
