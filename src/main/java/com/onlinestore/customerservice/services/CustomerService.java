@@ -4,4 +4,5 @@ import com.onlinestore.customerservice.model.Customer;
 
 public interface CustomerService {
 	Customer getCustomerById(String customerId);
+	void saveCustomer(Customer customer);
 }
