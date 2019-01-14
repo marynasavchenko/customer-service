@@ -1,9 +1,17 @@
 spring:
   application:
-    name:  customerservice
+    name: customerservice
   profiles:
     active:
       default
   cloud:
     config:
-      uri:  http://localhost:8888
+      uri: http://localhost:8888
+management:
+  endpoint:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: env
