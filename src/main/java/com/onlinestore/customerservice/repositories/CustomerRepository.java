@@ -1,4 +1,4 @@
-package com.onlinestore.customerservice.repository;
+package com.onlinestore.customerservice.repositories;
 
 import com.onlinestore.customerservice.model.Customer;
 import org.springframework.data.repository.CrudRepository;

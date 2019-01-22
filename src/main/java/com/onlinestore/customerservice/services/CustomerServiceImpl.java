@@ -1,7 +1,7 @@
 package com.onlinestore.customerservice.services;
 
 import com.onlinestore.customerservice.model.Customer;
-import com.onlinestore.customerservice.repository.CustomerRepository;
+import com.onlinestore.customerservice.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
