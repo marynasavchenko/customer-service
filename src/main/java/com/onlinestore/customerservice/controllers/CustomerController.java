@@ -1,6 +1,6 @@
 package com.onlinestore.customerservice.controllers;
 
-import com.onlinestore.customerservice.model.Customer;
+import com.onlinestore.customerservice.domain.Customer;
 import com.onlinestore.customerservice.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

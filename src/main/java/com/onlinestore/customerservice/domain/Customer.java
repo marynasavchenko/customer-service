@@ -1,4 +1,4 @@
-package com.onlinestore.customerservice.model;
+package com.onlinestore.customerservice.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

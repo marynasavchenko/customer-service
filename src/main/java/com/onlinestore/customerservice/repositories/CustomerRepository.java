@@ -1,6 +1,6 @@
 package com.onlinestore.customerservice.repositories;
 
-import com.onlinestore.customerservice.model.Customer;
+import com.onlinestore.customerservice.domain.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
