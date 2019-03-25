@@ -6,27 +6,48 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Objects;
 
+/**
+ * Customer entity class.
+ */
 @Entity
 @Table(name = "customers")
 public class Customer {
+	/**
+	 * Unique Id of the customer.
+	 */
 	@Id
-	@Column(name ="customer_id", nullable = false)
+	@Column(name = "customer_id", nullable = false)
 	private int customerId;
 
-	@Column(name ="customer_name", nullable = false)
+	/**
+	 * Name of the customer.
+	 */
+	@Column(name = "customer_name", nullable = false)
 	private String customerName;
 
-	@Column(name ="customer_address", nullable = false)
+	/**
+	 * Address of the customer.
+	 */
+	@Column(name = "customer_address", nullable = false)
 	private String customerAddress;
 
+	/**
+	 * Constructs new empty {@code Customer} instance.
+	 */
 	public Customer() {
-
 	}
 
-	public Customer(int customerId, String customerName, String customerAdress) {
+	/**
+	 * Constructs new {@code Customer} instance.
+	 *
+	 * @param customerId      unique Id of the customer
+	 * @param customerName    name of the customer
+	 * @param customerAddress address of the customer
+	 */
+	public Customer(int customerId, String customerName, String customerAddress) {
 		this.customerId = customerId;
 		this.customerName = customerName;
-		this.customerAddress = customerAdress;
+		this.customerAddress = customerAddress;
 	}
 
 	public int getCustomerId() {
