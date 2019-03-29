@@ -1,6 +1,7 @@
 package com.onlinestore.customerservice.services;
 
 import com.onlinestore.customerservice.domain.Customer;
+import com.onlinestore.customerservice.exceptions.CustomerNotFoundException;
 import com.onlinestore.customerservice.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,11 +30,11 @@ public class CustomerServiceImpl implements CustomerService {
 	 * Gets customer by id.
 	 *
 	 * @param customerId unique Id of the customer
-	 * @return customer
+	 * @return customer if customer is present, if not throw CustomerNotFoundException
 	 */
 	@Override
 	public Customer getCustomerById(String customerId) {
-		return customerRepository.findByCustomerId(customerId);
+		return customerRepository.findByCustomerId(customerId).orElseThrow(CustomerNotFoundException::new);
 	}
 
 	/**
