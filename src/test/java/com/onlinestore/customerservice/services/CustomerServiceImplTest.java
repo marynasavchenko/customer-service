@@ -1,6 +1,7 @@
 package com.onlinestore.customerservice.services;
 
 import com.onlinestore.customerservice.domain.Customer;
+import com.onlinestore.customerservice.exceptions.CustomerNotFoundException;
 import com.onlinestore.customerservice.repositories.CustomerRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,5 +36,11 @@ public class CustomerServiceImplTest {
 		when(customerRepository.findByCustomerId(ANY_CUSTOMER_ID)).thenReturn(Optional.of(customer));
 		customerService.getCustomerById(ANY_CUSTOMER_ID);
 		verify(customerRepository).findByCustomerId(ANY_CUSTOMER_ID);
+	}
+
+	@Test(expected = CustomerNotFoundException.class)
+	public void shouldThrowExceptionIfEmptyOptional() throws Exception {
+		when(customerRepository.findByCustomerId(ANY_CUSTOMER_ID)).thenReturn(Optional.empty());
+		customerService.getCustomerById(ANY_CUSTOMER_ID);
 	}
 }
