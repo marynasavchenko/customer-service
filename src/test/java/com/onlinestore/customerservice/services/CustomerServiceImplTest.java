@@ -43,4 +43,11 @@ public class CustomerServiceImplTest {
 		when(customerRepository.findByCustomerId(ANY_CUSTOMER_ID)).thenReturn(Optional.empty());
 		customerService.getCustomerById(ANY_CUSTOMER_ID);
 	}
+
+	@Test
+	public void shouldSaveCustomer() throws Exception {
+		customerService.saveCustomer(customer);
+		verify(customerRepository).save(customer);
+
+	}
 }
