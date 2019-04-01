@@ -17,7 +17,7 @@ public class Customer {
 	 */
 	@Id
 	@Column(name = "customer_id", nullable = false)
-	private int customerId;
+	private String customerId;
 
 	/**
 	 * Name of the customer.
@@ -44,17 +44,17 @@ public class Customer {
 	 * @param customerName    name of the customer
 	 * @param customerAddress address of the customer
 	 */
-	public Customer(int customerId, String customerName, String customerAddress) {
+	public Customer(String customerId, String customerName, String customerAddress) {
 		this.customerId = customerId;
 		this.customerName = customerName;
 		this.customerAddress = customerAddress;
 	}
 
-	public int getCustomerId() {
+	public String getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(int customerId) {
+	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
 	}
 
