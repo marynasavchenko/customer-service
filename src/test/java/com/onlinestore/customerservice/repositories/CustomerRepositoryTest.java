@@ -36,13 +36,19 @@ public class CustomerRepositoryTest {
 
 	@After
 	public void tearDown() throws Exception {
-
+		customerRepository.deleteAll();
 	}
 
 	@Test
-	public void shouldFindCustomerById() throws Exception {
+	public void shouldFindCustomerByIdIfPresent() throws Exception {
 		customerRepository.save(customer);
 		Optional<Customer> optionalCustomer = customerRepository.findByCustomerId(ANY_CUSTOMER_ID);
 		assertEquals(customer, optionalCustomer.get());
+	}
+
+	@Test
+	public void shouldReturnEmptyOptionalWhenNoSuchId() throws Exception {
+		Optional<Customer> optionalCustomer = customerRepository.findByCustomerId(ANY_CUSTOMER_ID);
+		assertEquals(Optional.empty(), optionalCustomer);
 	}
 }
