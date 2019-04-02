@@ -34,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public Customer getCustomerById(String customerId) {
-		return customerRepository.findByCustomerId(customerId).orElseThrow(CustomerNotFoundException::new);
+		return customerRepository.findByCustomerId(customerId).orElseThrow(() -> new CustomerNotFoundException(customerId));
 	}
 
 	/**
