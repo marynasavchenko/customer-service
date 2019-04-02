@@ -30,7 +30,8 @@ public class CustomerServiceImpl implements CustomerService {
 	 * Gets customer by id.
 	 *
 	 * @param customerId unique Id of the customer
-	 * @return customer if customer is present, if not throw CustomerNotFoundException
+	 * @return customer if customer is present
+	 * @throws CustomerNotFoundException when {@code CustomerRepository} returns empty Optional
 	 */
 	@Override
 	public Customer getCustomerById(String customerId) {
