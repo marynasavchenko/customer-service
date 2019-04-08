@@ -20,7 +20,7 @@ public class CustomerController {
 	private CustomerService customerService;
 
 	/**
-	 * Constructs a new {@code OrderController} instance.
+	 * Constructs new {@code OrderController} instance.
 	 *
 	 * @param customerService service that supports operations with customers
 	 */
@@ -30,10 +30,10 @@ public class CustomerController {
 	}
 
 	/**
-	 * GET  / : get a customer by id.
+	 * GET  / : gets customer by id.
 	 *
-	 * @param customerId the unique id of the customer
-	 * @return a customer
+	 * @param customerId unique id of the customer
+	 * @return customer
 	 */
 	@GetMapping("/{customerId}")
 	public Customer getCustomerById(@PathVariable("customerId") String customerId) {

@@ -27,7 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	/**
-	 * Gets customer by id.
+	 * Returns customer by id.
 	 *
 	 * @param customerId unique Id of the customer
 	 * @return customer if customer is present

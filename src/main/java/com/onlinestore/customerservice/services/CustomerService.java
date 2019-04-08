@@ -7,7 +7,7 @@ import com.onlinestore.customerservice.domain.Customer;
  */
 public interface CustomerService {
 	/**
-	 * Gets customer by specified id.
+	 * Returns customer by specified id.
 	 *
 	 * @param customerId unique Id of the customer
 	 * @return customer

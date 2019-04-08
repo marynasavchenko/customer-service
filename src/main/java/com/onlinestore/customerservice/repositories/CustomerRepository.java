@@ -7,12 +7,12 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * Spring Data JPA repository for Customer entity that supports CRUD operations.
+ * Spring Data JPA repository for {@link Customer} entity that supports CRUD operations.
  */
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, String> {
 	/**
-	 * Looks up customer in the database.
+	 * Returns customer from database.
 	 *
 	 * @param customerId unique Id of the customer
 	 * @return Optional of customer

@@ -5,7 +5,7 @@ package com.onlinestore.customerservice.exceptions;
  */
 public class CustomerNotFoundException extends RuntimeException {
 	/**
-	 * Constructs a new CustomerNotFoundException instance.
+	 * Constructs new CustomerNotFoundException instance.
 	 *
 	 * @param customerId unique Id of the customer.
 	 */
