@@ -1,6 +1,6 @@
 ## **Customer service**
 
-Customer service is a part of microservices application Online store. It manages customer data (name, address, etc.).
+Customer service is a part of microservices-based application Online store. It manages customer data (name, address, etc.).
 
 ## **Technology stack**
 
