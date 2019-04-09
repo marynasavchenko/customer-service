@@ -2,6 +2,19 @@
 
 Customer service is a part of microservices application Online store. It manages customer data (name, address, etc.).
 
+## **Technology stack**
+
+* Java 8
+* Spring Boot 2
+* Spring Cloud 2
+* Spring Data 2
+
+* jUnit 4
+* Mockito
+
+* Maven
+* Docker
+
 ## **Building**
 
 To compile source code and build Docker image:
@@ -22,16 +35,3 @@ To run tests via Maven:
 ```
 mvn clean test
 ```
-
-## **Technology stack**
-
-* Java
-* Spring Boot
-* Spring Cloud
-* Spring Data
-
-* jUnit
-* Mockito
-
-* Maven
-* Docker
