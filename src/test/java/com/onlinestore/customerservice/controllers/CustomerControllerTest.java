@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @WebMvcTest(CustomerController.class)
 public class CustomerControllerTest {
-	private final String CUSTOMER_ID = "25";
+	private static final String CUSTOMER_ID = "25";
 
 	@MockBean
 	private CustomerService customerService;
