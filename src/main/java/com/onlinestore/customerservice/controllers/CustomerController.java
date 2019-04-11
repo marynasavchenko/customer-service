@@ -3,10 +3,7 @@ package com.onlinestore.customerservice.controllers;
 import com.onlinestore.customerservice.domain.Customer;
 import com.onlinestore.customerservice.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Rest controller for managing customers information.
@@ -30,7 +27,7 @@ public class CustomerController {
 	}
 
 	/**
-	 * GET  / : gets customer by id.
+	 * GET  /{customerId} : gets customer by id.
 	 *
 	 * @param customerId unique id of the customer
 	 * @return customer
@@ -38,5 +35,15 @@ public class CustomerController {
 	@GetMapping("/{customerId}")
 	public Customer getCustomerById(@PathVariable("customerId") String customerId) {
 		return customerService.getCustomerById(customerId);
+	}
+
+	/**
+	 * POST / : saves new customer.
+	 *
+	 * @param customer customer to be saved
+	 */
+	@PostMapping("/")
+	public void addNewCustomer(Customer customer) {
+		customerService.saveCustomer(customer);
 	}
 }
