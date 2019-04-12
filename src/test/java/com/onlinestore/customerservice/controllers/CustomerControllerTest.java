@@ -18,6 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @WebMvcTest(CustomerController.class)
 public class CustomerControllerTest {
+	private static final String MAIN_URI = "/v1/customers/";
 	private static final String CUSTOMER_ID = "25";
 
 	@MockBean
@@ -28,19 +29,19 @@ public class CustomerControllerTest {
 
 	@Test
 	public void shouldGetCustomerById() throws Exception {
-		mockMvc.perform(get("/v1/customers/" + CUSTOMER_ID)).andExpect(status().isOk());
+		mockMvc.perform(get(MAIN_URI + CUSTOMER_ID)).andExpect(status().isOk());
 		verify(customerService).getCustomerById(CUSTOMER_ID);
 	}
 
 	@Test
 	public void shouldAddNewCustomer() throws Exception {
-		mockMvc.perform(post("/v1/customers/")).andExpect(status().isOk());
+		mockMvc.perform(post(MAIN_URI)).andExpect(status().isOk());
 		verify(customerService).saveCustomer(any(Customer.class));
 	}
 
 	@Test
 	public void shouldDeleteCustomer() throws Exception {
-		mockMvc.perform(delete("/v1/customers/" + CUSTOMER_ID)).andExpect(status().isNoContent());
+		mockMvc.perform(delete(MAIN_URI + CUSTOMER_ID)).andExpect(status().isNoContent());
 		verify(customerService).deleteCustomer(CUSTOMER_ID);
 	}
 }
