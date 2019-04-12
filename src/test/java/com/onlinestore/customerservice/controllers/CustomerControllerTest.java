@@ -12,8 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -37,5 +36,11 @@ public class CustomerControllerTest {
 	public void shouldAddNewCustomer() throws Exception {
 		mockMvc.perform(post("/v1/customers/")).andExpect(status().isOk());
 		verify(customerService).saveCustomer(any(Customer.class));
+	}
+
+	@Test
+	public void shouldDeleteCustomer() throws Exception {
+		mockMvc.perform(delete("/v1/customers/"+CUSTOMER_ID)).andExpect(status().isNoContent());
+
 	}
 }
