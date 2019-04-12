@@ -28,7 +28,7 @@ public class CustomerControllerTest {
 
 	@Test
 	public void shouldGetCustomerById() throws Exception {
-		mockMvc.perform(get("/v1/customers/"+CUSTOMER_ID)).andExpect(status().isOk());
+		mockMvc.perform(get("/v1/customers/" + CUSTOMER_ID)).andExpect(status().isOk());
 		verify(customerService).getCustomerById(CUSTOMER_ID);
 	}
 
@@ -40,7 +40,7 @@ public class CustomerControllerTest {
 
 	@Test
 	public void shouldDeleteCustomer() throws Exception {
-		mockMvc.perform(delete("/v1/customers/"+CUSTOMER_ID)).andExpect(status().isNoContent());
-
+		mockMvc.perform(delete("/v1/customers/" + CUSTOMER_ID)).andExpect(status().isNoContent());
+		verify(customerService).deleteCustomer(CUSTOMER_ID);
 	}
 }
