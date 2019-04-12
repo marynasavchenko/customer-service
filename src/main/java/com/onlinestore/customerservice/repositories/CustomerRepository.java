@@ -18,4 +18,11 @@ public interface CustomerRepository extends JpaRepository<Customer, String> {
 	 * @return Optional of customer
 	 */
 	Optional<Customer> findByCustomerId(String customerId);
+
+	/**
+	 * Deletes customer from database.
+	 *
+	 * @param customerId unique Id of the customer
+	 */
+	void deleteById(String customerId);
 }
