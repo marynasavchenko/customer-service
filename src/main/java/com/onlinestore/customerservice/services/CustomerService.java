@@ -20,4 +20,11 @@ public interface CustomerService {
 	 * @param customer
 	 */
 	void saveCustomer(Customer customer);
+
+	/**
+	 * Deletes customer by id.
+	 *
+	 * @param customerId unique Id of the customer
+	 */
+	void deleteCustomer(String customerId);
 }
