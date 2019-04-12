@@ -3,6 +3,7 @@ package com.onlinestore.customerservice.controllers;
 import com.onlinestore.customerservice.domain.Customer;
 import com.onlinestore.customerservice.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -45,5 +46,16 @@ public class CustomerController {
 	@PostMapping("/")
 	public void addNewCustomer(Customer customer) {
 		customerService.saveCustomer(customer);
+	}
+
+	/**
+	 * DELETE  /{customerId} : deletes customer by id.
+	 *
+	 * @param customerId unique id of the customer
+	 */
+	@DeleteMapping(value = "/{customerId}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void deleteCustomer(@PathVariable("customerId") String customerId) {
+		customerService.deleteCustomer(customerId);
 	}
 }
