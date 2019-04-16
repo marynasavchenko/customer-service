@@ -55,10 +55,6 @@ public class Customer {
 		return customerId;
 	}
 
-	public void setCustomerId(String customerId) {
-		this.customerId = customerId;
-	}
-
 	public String getCustomerName() {
 		return customerName;
 	}
