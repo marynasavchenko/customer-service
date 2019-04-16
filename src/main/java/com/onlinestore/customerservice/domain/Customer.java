@@ -1,9 +1,8 @@
 package com.onlinestore.customerservice.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 /**
@@ -16,6 +15,8 @@ public class Customer {
 	 * Unique Id of the customer.
 	 */
 	@Id
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "customer_id", nullable = false)
 	private String customerId;
 
