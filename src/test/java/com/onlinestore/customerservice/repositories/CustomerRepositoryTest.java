@@ -28,7 +28,7 @@ public class CustomerRepositoryTest {
 
 	@Before
 	public void setUp() throws Exception {
-		customer = new Customer(ANY_CUSTOMER_ID, ANY_CUSTOMER_NAME, ANY_CUSTOMER_ADDRESS);
+		customer = new Customer(null, ANY_CUSTOMER_NAME, ANY_CUSTOMER_ADDRESS);
 	}
 
 	@After
@@ -39,7 +39,7 @@ public class CustomerRepositoryTest {
 	@Test
 	public void shouldFindCustomerByIdIfPresent() throws Exception {
 		customerRepository.save(customer);
-		Optional<Customer> optionalCustomer = customerRepository.findByCustomerId(ANY_CUSTOMER_ID);
+		Optional<Customer> optionalCustomer = customerRepository.findByCustomerId(customer.getCustomerId());
 		assertEquals(customer, optionalCustomer.get());
 	}
 
