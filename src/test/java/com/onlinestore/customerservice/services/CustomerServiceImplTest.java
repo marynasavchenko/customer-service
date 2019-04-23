@@ -48,6 +48,11 @@ public class CustomerServiceImplTest {
 	public void shouldSaveCustomer() throws Exception {
 		customerService.saveCustomer(customer);
 		verify(customerRepository).save(customer);
+	}
 
+	@Test
+	public void shouldDeleteCustomer() throws Exception {
+		customerService.deleteCustomer(ANY_CUSTOMER_ID);
+		verify(customerRepository).deleteById(ANY_CUSTOMER_ID);
 	}
 }
