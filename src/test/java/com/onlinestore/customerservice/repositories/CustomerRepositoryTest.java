@@ -48,4 +48,13 @@ public class CustomerRepositoryTest {
 		Optional<Customer> optionalCustomer = customerRepository.findByCustomerId(ANY_CUSTOMER_ID);
 		assertEquals(Optional.empty(), optionalCustomer);
 	}
+
+	@Test
+	public void shouldDeleteCustomerById() throws Exception {
+		customerRepository.save(customer);
+
+		customerRepository.deleteById(customer.getCustomerId());
+		Optional<Customer> optionalCustomer = customerRepository.findByCustomerId(customer.getCustomerId());
+		assertEquals(Optional.empty(), optionalCustomer);
+	}
 }
