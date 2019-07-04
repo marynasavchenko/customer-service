@@ -11,13 +11,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @DataJpaTest
 @RunWith(SpringRunner.class)
 public class CustomerJpaTest {
+	private static final String ANY_CUSTOMER_NAME = "Anthony";
+	private static final String ANY_CUSTOMER_ADDRESS = "Berlin";
+
 	@Autowired
 	private TestEntityManager entityManager;
 
 	@Test
 	public void shouldMapCustomerEntity() throws Exception {
-		Customer customer = this.entityManager.persistAndFlush(new Customer(null, "Jane", "New York"));
+		Customer customer = this.entityManager.persistAndFlush(new Customer(null, ANY_CUSTOMER_NAME, ANY_CUSTOMER_ADDRESS));
 		Assertions.assertThat(customer.getCustomerId()).isNotNull();
-		Assertions.assertThat(customer.getCustomerId()).inUnicode();
 	}
 }
