@@ -19,7 +19,10 @@ public class CustomerJpaTest {
 
 	@Test
 	public void shouldMapCustomerEntity() throws Exception {
-		Customer customer = this.entityManager.persistAndFlush(new Customer(null, ANY_CUSTOMER_NAME, ANY_CUSTOMER_ADDRESS));
-		Assertions.assertThat(customer.getCustomerId()).isNotNull();
+		Customer customer = new Customer(null, ANY_CUSTOMER_NAME, ANY_CUSTOMER_ADDRESS);
+		Customer foundCustomer = this.entityManager.persistAndFlush(customer);
+
+		Assertions.assertThat(foundCustomer.getCustomerId()).isNotNull();
+		Assertions.assertThat(foundCustomer.getCustomerName()).isEqualTo(ANY_CUSTOMER_NAME);
 	}
 }
