@@ -1,20 +1,20 @@
 package com.onlinestore.customerservice.repositories;
 
 import com.onlinestore.customerservice.domain.Customer;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @DataJpaTest
 public class CustomerRepositoryTest {
 	private static final String ANY_CUSTOMER_ID = "123";
@@ -26,12 +26,12 @@ public class CustomerRepositoryTest {
 	@Autowired
 	private CustomerRepository customerRepository;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		customer = new Customer(null, ANY_CUSTOMER_NAME, ANY_CUSTOMER_ADDRESS);
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 		customerRepository.deleteAll();
 	}
